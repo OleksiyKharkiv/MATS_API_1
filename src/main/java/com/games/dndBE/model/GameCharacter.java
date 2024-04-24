@@ -1,7 +1,5 @@
 package com.games.dndBE.model;
 
-//import io.swagger.annotations.ApiModel;
-//import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,19 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "characters")
 @NoArgsConstructor
 @AllArgsConstructor
-//@ApiModel(description = "Details about a game character")
 public class GameCharacter {
     @Id
-//    @ApiModelProperty(notes = "The unique identifier of the game character")
     private String id;
 
-//    @ApiModelProperty(notes = "The name of the game character")
     private String name;
 
-//    @ApiModelProperty(notes = "The force attribute of the game character")
     private int force;
 
-//    @ApiModelProperty(notes = "The magic attribute of the game character")
     private int magic;
 
     // Override toString method

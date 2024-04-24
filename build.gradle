@@ -39,9 +39,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     implementation 'org.springframework.integration:spring-integration-http'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+    // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
+    implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.20'
 //    implementation 'org.springframework.integration:spring-integration-mongodb'
     implementation 'org.springframework.integration:spring-integration-ws'
-    implementation 'org.springframework.shell:spring-shell-starter'
+//    implementation 'org.springframework.shell:spring-shell-starter'
 //    // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
 //    implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '3.12.14'
 //    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb

@@ -17,7 +17,7 @@ public class TestDndApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.from(DndApplication::main).with(TestDndApplication.class).run(args);
+        SpringApplication.from(MATS_API_Application::main).with(TestDndApplication.class).run(args);
     }
 
 }

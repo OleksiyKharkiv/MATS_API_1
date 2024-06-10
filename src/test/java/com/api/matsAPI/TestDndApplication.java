@@ -1,4 +1,4 @@
-package com.games.dndBE;
+package com.api.matsAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -8,7 +8,7 @@ import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
-public class TestDndApplication {
+public class TestMATS_API_Application {
 
     @Bean
     @ServiceConnection
@@ -17,7 +17,7 @@ public class TestDndApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.from(MATS_API_Application::main).with(TestDndApplication.class).run(args);
+        SpringApplication.from(MATS_API_Application::main).with(TestMATS_API_Application.class).run(args);
     }
 
 }

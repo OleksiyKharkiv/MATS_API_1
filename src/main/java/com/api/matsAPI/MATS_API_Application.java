@@ -1,4 +1,4 @@
-package com.games.dndBE;
+package com.api.matsAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

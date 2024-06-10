@@ -1,4 +1,4 @@
-package com.games.dndBE.config;
+package com.api.matsAPI.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;

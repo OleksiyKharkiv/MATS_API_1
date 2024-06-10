@@ -1,4 +1,4 @@
-package com.games.dndBE.model;
+package com.api.matsAPI.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Data
 @Document(collection = "users")
@@ -73,56 +74,33 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         User user = (User) o;
-
-        if (optInMarketingEmails != user.optInMarketingEmails) return false;
-        if (optInTracking != user.optInTracking) return false;
-        if (!id.equals(user.id)) return false;
-        if (!username.equals(user.username)) return false;
-        if (!firstName.equals(user.firstName)) return false;
-        if (!lastName.equals(user.lastName)) return false;
-        if (!email.equals(user.email)) return false;
-        if (!photo.equals(user.photo)) return false;
-        if (!birthday.equals(user.birthday)) return false;
-        if (!gender.equals(user.gender)) return false;
-        if (!location.equals(user.location)) return false;
-        if (!sportTypes.equals(user.sportTypes)) return false;
-        if (!unitType.equals(user.unitType)) return false;
-        if (!userType.equals(user.userType)) return false;
-        if (!accountType.equals(user.accountType)) return false;
-        if (!language.equals(user.language)) return false;
-        if (!defaultUserProfileId.equals(user.defaultUserProfileId)) return false;
-        if (!created.equals(user.created)) return false;
-        if (!modified.equals(user.modified)) return false;
-        if (!registerCompleted.equals(user.registerCompleted)) return false;
-        return subscription.equals(user.subscription);
+        return optInMarketingEmails == user.optInMarketingEmails &&
+                optInTracking == user.optInTracking &&
+                Objects.equals(id, user.id) &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(photo, user.photo) &&
+                Objects.equals(birthday, user.birthday) &&
+                Objects.equals(gender, user.gender) &&
+                Objects.equals(location, user.location) &&
+                Objects.equals(sportTypes, user.sportTypes) &&
+                Objects.equals(unitType, user.unitType) &&
+                Objects.equals(userType, user.userType) &&
+                Objects.equals(accountType, user.accountType) &&
+                Objects.equals(language, user.language) &&
+                Objects.equals(defaultUserProfileId, user.defaultUserProfileId) &&
+                Objects.equals(created, user.created) &&
+                Objects.equals(modified, user.modified) &&
+                Objects.equals(registerCompleted, user.registerCompleted) &&
+                Objects.equals(subscription, user.subscription);
     }
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + username.hashCode();
-        result = 31 * result + firstName.hashCode();
-        result = 31 * result + lastName.hashCode();
-        result = 31 * result + email.hashCode();
-        result = 31 * result + photo.hashCode();
-        result = 31 * result + birthday.hashCode();
-        result = 31 * result + gender.hashCode();
-        result = 31 * result + location.hashCode();
-        result = 31 * result + sportTypes.hashCode();
-        result = 31 * result + unitType.hashCode();
-        result = 31 * result + userType.hashCode();
-        result = 31 * result + accountType.hashCode();
-        result = 31 * result + language.hashCode();
-        result = 31 * result + (optInMarketingEmails ? 1 : 0);
-        result = 31 * result + (optInTracking ? 1 : 0);
-        result = 31 * result + defaultUserProfileId.hashCode();
-        result = 31 * result + created.hashCode();
-        result = 31 * result + modified.hashCode();
-        result = 31 * result + registerCompleted.hashCode();
-        result = 31 * result + subscription.hashCode();
-        return result;
+        return Objects.hash(id, username, firstName, lastName, email, photo, birthday, gender, location, sportTypes, unitType, userType, accountType, language, optInMarketingEmails, optInTracking, defaultUserProfileId, created, modified, registerCompleted, subscription);
     }
 
     @Data

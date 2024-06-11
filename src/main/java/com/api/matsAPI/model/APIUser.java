@@ -1,8 +1,6 @@
 package com.api.matsAPI.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -74,33 +72,13 @@ public class APIUser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        APIUser APIUser = (APIUser) o;
-        return optInMarketingEmails == APIUser.optInMarketingEmails &&
-                optInTracking == APIUser.optInTracking &&
-                Objects.equals(id, APIUser.id) &&
-                Objects.equals(username, APIUser.username) &&
-                Objects.equals(firstName, APIUser.firstName) &&
-                Objects.equals(lastName, APIUser.lastName) &&
-                Objects.equals(email, APIUser.email) &&
-                Objects.equals(photo, APIUser.photo) &&
-                Objects.equals(birthday, APIUser.birthday) &&
-                Objects.equals(gender, APIUser.gender) &&
-                Objects.equals(location, APIUser.location) &&
-                Objects.equals(sportTypes, APIUser.sportTypes) &&
-                Objects.equals(unitType, APIUser.unitType) &&
-                Objects.equals(userType, APIUser.userType) &&
-                Objects.equals(accountType, APIUser.accountType) &&
-                Objects.equals(language, APIUser.language) &&
-                Objects.equals(defaultUserProfileId, APIUser.defaultUserProfileId) &&
-                Objects.equals(created, APIUser.created) &&
-                Objects.equals(modified, APIUser.modified) &&
-                Objects.equals(registerCompleted, APIUser.registerCompleted) &&
-                Objects.equals(subscription, APIUser.subscription);
+        APIUser apiUser = (APIUser) o;
+        return Objects.equals(id, apiUser.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, firstName, lastName, email, photo, birthday, gender, location, sportTypes, unitType, userType, accountType, language, optInMarketingEmails, optInTracking, defaultUserProfileId, created, modified, registerCompleted, subscription);
+        return Objects.hash(id);
     }
 
     @Data

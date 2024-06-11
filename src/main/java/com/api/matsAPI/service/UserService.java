@@ -1,7 +1,7 @@
 package com.api.matsAPI.service;
 
-import com.api.matsAPI.model.User;
+import com.api.matsAPI.model.APIUser;
 
 public interface UserService {
-    User getUserById(String id);
+    APIUser getUserById(String id);
 }

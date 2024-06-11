@@ -14,7 +14,7 @@ import java.util.Objects;
 @Document(collection = "users")
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class APIUser {
     @Id
     private String id;
 
@@ -45,7 +45,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "APIUser{" +
                 "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", firstName='" + firstName + '\'' +
@@ -74,28 +74,28 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return optInMarketingEmails == user.optInMarketingEmails &&
-                optInTracking == user.optInTracking &&
-                Objects.equals(id, user.id) &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(firstName, user.firstName) &&
-                Objects.equals(lastName, user.lastName) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(photo, user.photo) &&
-                Objects.equals(birthday, user.birthday) &&
-                Objects.equals(gender, user.gender) &&
-                Objects.equals(location, user.location) &&
-                Objects.equals(sportTypes, user.sportTypes) &&
-                Objects.equals(unitType, user.unitType) &&
-                Objects.equals(userType, user.userType) &&
-                Objects.equals(accountType, user.accountType) &&
-                Objects.equals(language, user.language) &&
-                Objects.equals(defaultUserProfileId, user.defaultUserProfileId) &&
-                Objects.equals(created, user.created) &&
-                Objects.equals(modified, user.modified) &&
-                Objects.equals(registerCompleted, user.registerCompleted) &&
-                Objects.equals(subscription, user.subscription);
+        APIUser APIUser = (APIUser) o;
+        return optInMarketingEmails == APIUser.optInMarketingEmails &&
+                optInTracking == APIUser.optInTracking &&
+                Objects.equals(id, APIUser.id) &&
+                Objects.equals(username, APIUser.username) &&
+                Objects.equals(firstName, APIUser.firstName) &&
+                Objects.equals(lastName, APIUser.lastName) &&
+                Objects.equals(email, APIUser.email) &&
+                Objects.equals(photo, APIUser.photo) &&
+                Objects.equals(birthday, APIUser.birthday) &&
+                Objects.equals(gender, APIUser.gender) &&
+                Objects.equals(location, APIUser.location) &&
+                Objects.equals(sportTypes, APIUser.sportTypes) &&
+                Objects.equals(unitType, APIUser.unitType) &&
+                Objects.equals(userType, APIUser.userType) &&
+                Objects.equals(accountType, APIUser.accountType) &&
+                Objects.equals(language, APIUser.language) &&
+                Objects.equals(defaultUserProfileId, APIUser.defaultUserProfileId) &&
+                Objects.equals(created, APIUser.created) &&
+                Objects.equals(modified, APIUser.modified) &&
+                Objects.equals(registerCompleted, APIUser.registerCompleted) &&
+                Objects.equals(subscription, APIUser.subscription);
     }
 
     @Override

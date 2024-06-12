@@ -1,33 +1,41 @@
 //package com.api.matsAPI.config;
 //
 //import com.jcraft.jsch.JSch;
+//import com.jcraft.jsch.JSchException;
 //import com.jcraft.jsch.Session;
+//import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
-//
-//import java.util.Properties;
 //
 //@Configuration
 //public class SshTunnelConfig {
 //
+//    @Value("${ssh.hostname}")
+//    private String sshHostname;
+//
+//    @Value("${ssh.port}")
+//    private int sshPort;
+//
+//    @Value("${ssh.username}")
+//    private String sshUsername;
+//
+//    @Value("${ssh.identityFile}")
+//    private String sshIdentityFile;
+//
+//    @Value("${ssh.passphrase}")
+//    private String sshPassphrase;
+//
 //    @Bean
-//    public void createSshTunnel() throws Exception {
-//        String sshHost = "172.201.121.48"; // Удаленный сервер SSH
-//        String sshUser = "matsdb"; // Имя пользователя SSH
-//        String sshPrivateKey = "C:/MATS/Olex/Olex_openssh.pem"; // Путь к вашему PEM-ключу
-//        String sshPassword = "m7fKseRfzhXN"; // Пароль пользователя SSH
-//        int localPort = 27018; // Локальный порт для проброса
-//        int remotePort = 27017; // Удаленный порт MongoDB
-//
+//    public Session sshSession() throws JSchException {
 //        JSch jsch = new JSch();
-//        jsch.addIdentity(sshPrivateKey);
+//        jsch.addIdentity(sshIdentityFile, sshPassphrase);
 //
-//        Session session = jsch.getSession(sshUser, sshHost);
-//        Properties config = new Properties();
-//        config.put("StrictHostKeyChecking", "no");
-//        session.setConfig(config);
+//        Session session = jsch.getSession(sshUsername, sshHostname, sshPort);
+//        session.setConfig("StrictHostKeyChecking", "no");
 //        session.connect();
 //
-//        session.setPortForwardingL(localPort, "localhost", remotePort);
+//        int forwardedPort = session.setPortForwardingL(27017, "localhost", 27017); // Пробрасываем порт для MongoDB
+//
+//        return session;
 //    }
 //}

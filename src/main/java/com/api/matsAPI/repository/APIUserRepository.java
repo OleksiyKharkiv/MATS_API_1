@@ -5,8 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public interface APIUserRepository extends MongoRepository<APIUser, String> {
-    @Query("{ '_id': ?0 }")
-    APIUser getAPIUserById(String id);
+//    @Query("{ '_id': ?0 }")
+//    APIUser getAPIUserById(String id);
 }

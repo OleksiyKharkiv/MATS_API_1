@@ -9,5 +9,4 @@ class MATSAPIApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

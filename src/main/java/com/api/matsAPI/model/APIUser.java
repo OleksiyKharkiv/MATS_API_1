@@ -3,7 +3,6 @@ package com.api.matsAPI.model;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-//import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -15,7 +14,6 @@ import java.util.Objects;
 @AllArgsConstructor
 public class APIUser {
     @Id
-//    @Field("_id")
     private String id;
 
     private String username;
